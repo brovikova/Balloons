@@ -1,0 +1,14 @@
+// Определяет основной стиль кнопок
+  
+@mixin style-link($color, $bg-color)
+  display: inline-block
+  text-transform: uppercase
+  color: $color
+  background-color: $bg-color
+  text-decoration: none
+
+@mixin clearfix
+  &::after
+    content: ""
+    display: table
+    clear: left

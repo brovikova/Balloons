@@ -1,0 +1,33 @@
+.btn
+  &:link, &:visited
+    @include style-link($font-color, $light-color) 
+    font-size: 2rem
+    line-height: 2.4rem
+    letter-spacing: 5px
+    font-weight: 500
+    padding: 1.5rem 4rem
+    border-radius: 50px
+    transition: all .3s
+    position: relative
+  &:hover
+    transform: translateY(-.4rem)
+    box-shadow: $box-shadow
+    &::after
+      transform: scale(1.5, 1.7)
+      opacity: 0
+  &:active
+    transform: translateY(0)
+  &::after
+    content: ""
+    position: absolute
+    top: 0
+    left: 0
+    z-index: -1
+    background-color: $light-color
+    border-radius: 50px
+    width: 100%
+    height: 100%
+    transition: all .4s
+  &_animated
+    animation: btnAnimation .4s ease-in .5s
+    animation-fill-mode: backwards
