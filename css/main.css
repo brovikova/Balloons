@@ -14,15 +14,12 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: "Roboto", sans-serif;
-  font-size: 1.6rem;
-  font-weight: 400;
   background-color: #F7F7F7;
-  color: #777777;
 }
 
 .container {
   margin: 0 auto;
+  width: 100%;
   max-width: 114rem;
 }
 
@@ -115,10 +112,33 @@ body {
     opacity: 1;
   }
 }
-.title {
+@-webkit-keyframes btnAnimationLink {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+@keyframes btnAnimationLink {
+  0% {
+    height: 0;
+  }
+  100% {
+    height: 100%;
+  }
+}
+body {
+  font-family: "Roboto", sans-serif;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #777777;
+}
+
+.title-first {
   color: #FFFFFF;
 }
-.title__main {
+.title-first__main {
   display: block;
   text-transform: uppercase;
   font-size: 5.3rem;
@@ -129,7 +149,7 @@ body {
   -webkit-animation: leftToRight 2s ease-in 0.5s;
           animation: leftToRight 2s ease-in 0.5s;
 }
-.title__subtitle {
+.title-first__subtitle {
   display: block;
   text-transform: lowercase;
   font-size: 4rem;
@@ -141,13 +161,62 @@ body {
   margin-bottom: 5rem;
 }
 
-.grid {
-  background-color: #1cecd4;
+.title-secondary {
+  text-transform: uppercase;
+  font-size: 3.6rem;
+  letter-spacing: 1rem;
+  font-weight: 900;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(186, 133, 84, 0.7)), to(rgba(161, 79, 3, 0.7)));
+  background: -o-linear-gradient(left, rgba(186, 133, 84, 0.7) 0%, rgba(161, 79, 3, 0.7) 100%);
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0%, rgba(161, 79, 3, 0.7) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+}
+.title-secondary:hover {
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
+  -webkit-transform: scale(1.04);
+      -ms-transform: scale(1.04);
+          transform: scale(1.04);
+}
+
+.title-third {
+  font-size: 2rem;
+  line-height: 2.4rem;
+  letter-spacing: 0.2rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.paragraph {
+  font-size: 1.6rem;
+  line-height: 140%;
+  letter-spacing: 0.2rem;
+  font-weight: 400;
+}
+
+.text-center {
+  text-align: center;
+}
+
+.margin-bottom-10px {
+  margin-bottom: 1rem;
+}
+
+.margin-bottom-30px {
+  margin-bottom: 3rem;
+}
+
+.margin-bottom-80px {
+  margin-bottom: 8rem;
 }
 
 .row {
   max-width: 114rem;
-  background: #e0ec3c;
 }
 .row:not(:last-child) {
   margin-bottom: 8rem;
@@ -183,7 +252,6 @@ body {
 }
 
 [class^=col-] {
-  background-color: #c422d6;
   float: left;
 }
 [class^=col-]:not(:last-child) {
@@ -278,4 +346,125 @@ body {
           animation: btnAnimation 0.4s ease-in 0.5s;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
+}
+
+.btn-link:link, .btn-link:visited {
+  display: inline-block;
+  padding: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  text-decoration: none;
+  color: #A14F03;
+  border-bottom: 1px #BA8554 solid;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  transition: all 0.4s;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  position: relative;
+}
+.btn-link:link::after, .btn-link:visited::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 0;
+  background: #BA8554;
+  z-index: -1;
+}
+.btn-link:hover {
+  -webkit-transform: translateY(-0.2rem);
+      -ms-transform: translateY(-0.2rem);
+          transform: translateY(-0.2rem);
+  color: #FFFFFF;
+}
+.btn-link:hover::after {
+  -webkit-animation: btnAnimationLink 0.5s linear;
+          animation: btnAnimationLink 0.5s linear;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+}
+.btn-link:active {
+  -webkit-transform: translateY(0);
+      -ms-transform: translateY(0);
+          transform: translateY(0);
+}
+
+.composition {
+  position: relative;
+}
+.composition__photo {
+  width: 60%;
+  border-radius: 0.5rem;
+  position: absolute;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+  outline-offset: 1rem;
+}
+.composition__photo_b1 {
+  top: 0;
+  left: 2rem;
+}
+.composition__photo_b2 {
+  top: 8rem;
+  right: 0;
+  z-index: 1;
+}
+.composition__photo_b3 {
+  top: 14rem;
+  left: 4rem;
+  z-index: 2;
+}
+.composition__photo:hover {
+  -webkit-transform: scale(1.2);
+      -ms-transform: scale(1.2);
+          transform: scale(1.2);
+  outline: 1rem solid #BA8554;
+  z-index: 5;
+}
+.composition:hover .composition__photo:not(:hover) {
+  -webkit-transform: scale(0.85);
+      -ms-transform: scale(0.85);
+          transform: scale(0.85);
+}
+
+.adventure-card {
+  background: rgba(255, 255, 255, 0.8);
+  text-align: center;
+  padding: 2rem;
+  border-radius: 0.5rem;
+  -webkit-transition: all 0.2s;
+  -o-transition: all 0.2s;
+  transition: all 0.2s;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+.adventure-card:hover {
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+}
+.adventure-card__icon {
+  display: inline-block;
+  font-size: 6rem;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(186, 133, 84, 0.7)), to(rgba(161, 79, 3, 0.7)));
+  background: -o-linear-gradient(left, rgba(186, 133, 84, 0.7) 0%, rgba(161, 79, 3, 0.7) 100%);
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0%, rgba(161, 79, 3, 0.7) 100%);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.section-about {
+  padding: 8rem 0 5rem;
+}
+
+.section-adventure {
+  padding: 23rem 0;
+  background: -webkit-gradient(linear, left top, right top, from(rgba(186, 133, 84, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../../img/adventure-bg.jpeg) center/cover no-repeat;
+  background: -o-linear-gradient(left, rgba(186, 133, 84, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url(../../img/adventure-bg.jpeg) center/cover no-repeat;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url(../../img/adventure-bg.jpeg) center/cover no-repeat;
+  -webkit-clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%);
+          clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%);
 }

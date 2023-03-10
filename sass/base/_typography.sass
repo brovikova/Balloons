@@ -1,4 +1,10 @@
-.title
+body
+  font-family: "Roboto", sans-serif
+  font-size: 1.6rem
+  font-weight: 400
+  color: $font-color
+
+.title-first
   color: $light-color
   &__main
     display: block
@@ -18,3 +24,30 @@
     font-weight: 100
     animation: rightToLeft 2s ease-in .5s
     margin-bottom: 5rem
+
+.title-secondary
+  text-transform: uppercase
+  font-size: $font-size-h2
+  letter-spacing: 1rem
+  font-weight: 900
+  background: linear-gradient(90deg, rgba($base-light-color, 0.7) 0%, rgba($base-dark-color, 0.7) 100%)
+  -webkit-background-clip: text
+  color: transparent
+  transition: all .4s
+  backface-visibility: hidden
+  &:hover
+    text-shadow: $text-shadow
+    transform: scale(1.04)
+
+.title-third
+  font-size: $font-size-h3
+  line-height: 2.4rem
+  letter-spacing: .2rem
+  font-weight: 700
+  text-transform: uppercase
+
+.paragraph
+  font-size: $font-size-paragraph
+  line-height: 140%
+  letter-spacing: .2rem
+  font-weight: 400
