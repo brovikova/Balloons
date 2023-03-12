@@ -1,14 +1,15 @@
 .btn
-  &:link, &:visited
+  &, &:link, &:visited
     @include style-link($font-color, $light-color) 
     font-size: 2rem
     line-height: 2.4rem
-    letter-spacing: 5px
+    letter-spacing: .4rem
     font-weight: 500
     padding: 1.5rem 4rem
     border-radius: 50px
     transition: all .3s
     position: relative
+    border: none
   &:hover
     transform: translateY(-.4rem)
     box-shadow: $box-shadow
@@ -28,6 +29,17 @@
     width: 100%
     height: 100%
     transition: all .4s
+
   &_animated
     animation: btnAnimation .4s ease-in .5s
     animation-fill-mode: backwards
+
+  &_card.btn
+    padding: 1.5rem 2.5rem
+
+  &, &_brown
+    background: $base-light-color
+    color: $light-color
+    &::after
+      background: $base-light-color
+    

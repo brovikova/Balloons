@@ -1,9 +1,6 @@
 .row 
   max-width: $grid-width
-  
-  &:not(:last-child)
-    margin-bottom: $gutter-row-vertical
-
+  margin: 0 auto
   @include clearfix
   
 .col-1-of-2
@@ -28,3 +25,4 @@
   float: left
   &:not(:last-child)
     margin-right: $gutter-horizontal
+    margin-bottom: $gutter-row-vertical

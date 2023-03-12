@@ -166,9 +166,9 @@ body {
   font-size: 3.6rem;
   letter-spacing: 1rem;
   font-weight: 900;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(186, 133, 84, 0.7)), to(rgba(161, 79, 3, 0.7)));
-  background: -o-linear-gradient(left, rgba(186, 133, 84, 0.7) 0%, rgba(161, 79, 3, 0.7) 100%);
-  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0%, rgba(161, 79, 3, 0.7) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(4%, #BA8554), to(#A14F03));
+  background: -o-linear-gradient(left, #BA8554 4%, #A14F03);
+  background: linear-gradient(90deg, #BA8554 4%, #A14F03);
   -webkit-background-clip: text;
   color: transparent;
   -webkit-transition: all 0.4s;
@@ -176,12 +176,16 @@ body {
   transition: all 0.4s;
   -webkit-backface-visibility: hidden;
           backface-visibility: hidden;
+  text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
 }
 .title-secondary:hover {
   text-shadow: 0 4px 4px rgba(0, 0, 0, 0.25);
   -webkit-transform: scale(1.04);
       -ms-transform: scale(1.04);
           transform: scale(1.04);
+}
+.title-secondary_white {
+  color: #FFFFFF;
 }
 
 .title-third {
@@ -203,6 +207,10 @@ body {
   text-align: center;
 }
 
+.block-center {
+  margin: 0 auto;
+}
+
 .margin-bottom-10px {
   margin-bottom: 1rem;
 }
@@ -215,11 +223,13 @@ body {
   margin-bottom: 8rem;
 }
 
+.margin-left-20px {
+  margin-left: 2rem;
+}
+
 .row {
   max-width: 114rem;
-}
-.row:not(:last-child) {
-  margin-bottom: 8rem;
+  margin: 0 auto;
 }
 .row::after {
   content: "";
@@ -256,12 +266,13 @@ body {
 }
 [class^=col-]:not(:last-child) {
   margin-right: 6rem;
+  margin-bottom: 8rem;
 }
 
 .header {
-  background: -webkit-gradient(linear, left top, right top, from(rgba(186, 133, 84, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../img/header-bg.jpg) center/cover no-repeat;
-  background: -o-linear-gradient(left, rgba(186, 133, 84, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/header-bg.jpg) center/cover no-repeat;
-  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url(../img/header-bg.jpg) center/cover no-repeat;
+  background: -webkit-gradient(linear, left top, right top, color-stop(4%, rgba(186, 133, 84, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../img/header-bg.jpg) center/cover no-repeat;
+  background: -o-linear-gradient(left, rgba(186, 133, 84, 0.7) 4%, rgba(0, 0, 0, 0.7) 100%), url(../img/header-bg.jpg) center/cover no-repeat;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 4%, rgba(0, 0, 0, 0.7) 100%), url(../img/header-bg.jpg) center/cover no-repeat;
   height: 100vh;
   -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 85%);
           clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 85%);
@@ -292,7 +303,7 @@ body {
   margin: 0 auto;
 }
 
-.btn:link, .btn:visited {
+.btn, .btn:link, .btn:visited {
   display: inline-block;
   text-transform: uppercase;
   color: #777777;
@@ -300,7 +311,7 @@ body {
   text-decoration: none;
   font-size: 2rem;
   line-height: 2.4rem;
-  letter-spacing: 5px;
+  letter-spacing: 0.4rem;
   font-weight: 500;
   padding: 1.5rem 4rem;
   border-radius: 50px;
@@ -308,6 +319,7 @@ body {
   -o-transition: all 0.3s;
   transition: all 0.3s;
   position: relative;
+  border: none;
 }
 .btn:hover {
   -webkit-transform: translateY(-0.4rem);
@@ -346,6 +358,16 @@ body {
           animation: btnAnimation 0.4s ease-in 0.5s;
   -webkit-animation-fill-mode: backwards;
           animation-fill-mode: backwards;
+}
+.btn_card.btn {
+  padding: 1.5rem 2.5rem;
+}
+.btn, .btn_brown {
+  background: #BA8554;
+  color: #FFFFFF;
+}
+.btn::after, .btn_brown::after {
+  background: #BA8554;
 }
 
 .btn-link:link, .btn-link:visited {
@@ -449,11 +471,320 @@ body {
 .adventure-card__icon {
   display: inline-block;
   font-size: 6rem;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(186, 133, 84, 0.7)), to(rgba(161, 79, 3, 0.7)));
-  background: -o-linear-gradient(left, rgba(186, 133, 84, 0.7) 0%, rgba(161, 79, 3, 0.7) 100%);
-  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0%, rgba(161, 79, 3, 0.7) 100%);
+  background: -webkit-gradient(linear, left top, right top, color-stop(4%, #BA8554), to(#A14F03));
+  background: -o-linear-gradient(left, #BA8554 4%, #A14F03);
+  background: linear-gradient(90deg, #BA8554 4%, #A14F03);
   -webkit-background-clip: text;
   color: transparent;
+}
+
+.tour-card {
+  position: relative;
+  height: 52rem;
+  -webkit-perspective: 150rem;
+          perspective: 150rem;
+}
+.tour-card__side {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 52rem;
+  -webkit-transition: all 1s ease-out;
+  -o-transition: all 1s ease-out;
+  transition: all 1s ease-out;
+  -webkit-backface-visibility: hidden;
+          backface-visibility: hidden;
+  border-radius: 0.3rem;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+.tour-card__side_front {
+  background: #FFFFFF;
+}
+.tour-card__side_back {
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(4%, #BA8554), to(#A14F03));
+  background: -o-linear-gradient(top, #BA8554 4%, #A14F03 100%);
+  background: linear-gradient(to bottom, #BA8554 4%, #A14F03 100%);
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  padding: 10rem 0;
+  text-align: center;
+}
+.tour-card:hover .tour-card__side_front {
+  -webkit-transform: rotateY(-180deg);
+          transform: rotateY(-180deg);
+}
+.tour-card:hover .tour-card__side_back {
+  -webkit-transform: rotateY(0);
+          transform: rotateY(0);
+}
+.tour-card__image {
+  height: 24rem;
+  width: 100%;
+  background-blend-mode: hard-light;
+  -webkit-clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 85%);
+          clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 85%);
+}
+.tour-card__image_1 {
+  background: #BA8554 url(../../img/card-1.jpg) center/cover no-repeat;
+}
+.tour-card__image_2 {
+  background: #BA8554 url(../../img/card-2.jpg) center/cover no-repeat;
+}
+.tour-card__image_3 {
+  background: #BA8554 url(../../img/card-3.jpg) center/cover no-repeat;
+}
+.tour-card__title {
+  font-size: 2.8rem;
+  letter-spacing: 0.2rem;
+  font-weight: 300;
+  text-transform: uppercase;
+  color: #FFFFFF;
+  position: relative;
+}
+.tour-card__title span {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  background: -webkit-gradient(linear, left top, right top, color-stop(4%, #BA8554), to(#A14F03));
+  background: -o-linear-gradient(left, #BA8554 4%, #A14F03);
+  background: linear-gradient(90deg, #BA8554 4%, #A14F03);
+  position: absolute;
+  right: 0;
+}
+.tour-card__title span:nth-child(1) {
+  padding: 1rem 2rem 0.2rem;
+  top: -5rem;
+}
+.tour-card__title span:nth-child(2) {
+  padding: 0.2rem 2rem 1rem;
+  top: -1rem;
+}
+.tour-card__description {
+  list-style: none;
+  font-size: 1.6rem;
+  font-weight: 700;
+  letter-spacing: 0.2rem;
+  color: #777777;
+  padding: 6rem 0;
+}
+.tour-card__description li {
+  border-bottom: 1px solid #777777;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  margin: 0 auto 18px;
+}
+.tour-card__description li:last-child {
+  margin-bottom: 0;
+}
+.tour-card__text {
+  color: #FFFFFF;
+  letter-spacing: 0.2rem;
+  margin-bottom: 8rem;
+}
+.tour-card__text_caption {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-weight: 300;
+}
+.tour-card__text_price {
+  font-size: 6rem;
+  font-weight: 400;
+}
+
+.feedback-card {
+  width: 80%;
+  background: rgba(255, 255, 255, 0.85);
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  padding: 6rem 10rem;
+  -webkit-transform: skew(-25deg);
+      -ms-transform: skew(-25deg);
+          transform: skew(-25deg);
+}
+.feedback-card > * {
+  -webkit-transform: skew(25deg);
+      -ms-transform: skew(25deg);
+          transform: skew(25deg);
+}
+.feedback-card__image {
+  width: 17rem;
+  height: 17rem;
+  border-radius: 50%;
+  float: left;
+  shape-outside: circle(50% at 50% 50%);
+  -webkit-shape-outside: circle(50% at 50% 50%);
+  margin-right: 4rem;
+  overflow: hidden;
+  position: relative;
+}
+.feedback-card__image img {
+  width: 100%;
+  -webkit-transform: scale(1.1);
+      -ms-transform: scale(1.1);
+          transform: scale(1.1);
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.feedback-card__name {
+  font-size: 2.4rem;
+  font-weight: 400;
+  letter-spacing: 0.2rem;
+  text-align: center;
+  color: #FFFFFF;
+  text-transform: uppercase;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+  -webkit-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+.feedback-card:hover img {
+  -webkit-transform: scale(1);
+      -ms-transform: scale(1);
+          transform: scale(1);
+  -webkit-filter: blur(0.3rem) brightness(80%);
+          filter: blur(0.3rem) brightness(80%);
+}
+.feedback-card:hover .feedback-card__name {
+  opacity: 1;
+}
+
+.bg-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.bg-gradient {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: -webkit-gradient(linear, left top, right top, color-stop(4%, rgba(186, 133, 84, 0.7)), to(rgba(0, 0, 0, 0.7)));
+  background: -o-linear-gradient(left, rgba(186, 133, 84, 0.7) 4%, rgba(0, 0, 0, 0.7) 100%);
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 4%, rgba(0, 0, 0, 0.7) 100%);
+  z-index: -1;
+  width: 100%;
+  height: 100%;
+}
+
+.booking {
+  padding: 5rem;
+  background: -o-linear-gradient(350deg, rgba(255, 255, 255, 0.9) 60%, transparent 60%), url(../../img/booking-bg.jpg) center/cover no-repeat;
+  background: linear-gradient(100deg, rgba(255, 255, 255, 0.9) 60%, transparent 60%), url(../../img/booking-bg.jpg) center/cover no-repeat;
+  border-radius: 0.3rem;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+}
+
+.booking__form {
+  width: 55%;
+}
+
+.form {
+  padding-top: 10px;
+}
+.form__group:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+.form__input {
+  width: 60%;
+  background: #FFFFFF;
+  padding: 1.8rem 0 1.8rem 2.2rem;
+  border: none;
+  border-radius: 0.3rem;
+  border-bottom: 0.3rem solid transparent;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  color: #777777;
+  font-weight: 400;
+  caret-color: #A14F03;
+}
+.form__input:focus {
+  border-bottom: 0.3rem solid #66D763;
+  -webkit-box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+          box-shadow: 0 4px 4px rgba(0, 0, 0, 0.3);
+  outline: none;
+  color: #000000;
+}
+.form__input:focus:invalid {
+  border-bottom: 0.3rem solid #D76363;
+}
+.form__label {
+  display: block;
+  padding-left: 1.5rem;
+  font-size: 1.6rem;
+  letter-spacing: 0.2rem;
+  color: #777777;
+  font-weight: 400;
+  -webkit-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+.form__input:-moz-placeholder-shown + .form__label {
+  visability: hidden;
+  opacity: 0;
+}
+.form__input:-ms-input-placeholder + .form__label {
+  visability: hidden;
+  opacity: 0;
+}
+.form__input:placeholder-shown + .form__label {
+  visability: hidden;
+  opacity: 0;
+}
+.form__group-radio {
+  display: inline-block;
+  letter-spacing: 0.2rem;
+}
+.form__input-radio {
+  display: none;
+}
+.form__label-radio {
+  cursor: pointer;
+  position: relative;
+}
+.form__button-radio {
+  width: 3rem;
+  height: 3rem;
+  border-radius: 50%;
+  border: 0.4rem solid #BA8554;
+  display: inline-block;
+  position: relative;
+  top: 0.8rem;
+  margin-right: 1rem;
+}
+.form__button-radio::after {
+  content: "";
+  display: inline-block;
+  width: 1.5rem;
+  height: 1.5rem;
+  border-radius: 50%;
+  background: #BA8554;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  opacity: 0;
+}
+.form__input-radio:checked ~ .form__label-radio .form__button-radio::after {
+  opacity: 1;
 }
 
 .section-about {
@@ -462,9 +793,25 @@ body {
 
 .section-adventure {
   padding: 23rem 0;
-  background: -webkit-gradient(linear, left top, right top, from(rgba(186, 133, 84, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../../img/adventure-bg.jpeg) center/cover no-repeat;
-  background: -o-linear-gradient(left, rgba(186, 133, 84, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url(../../img/adventure-bg.jpeg) center/cover no-repeat;
-  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 0%, rgba(0, 0, 0, 0.7) 100%), url(../../img/adventure-bg.jpeg) center/cover no-repeat;
+  background: -webkit-gradient(linear, left top, right top, color-stop(4%, rgba(186, 133, 84, 0.7)), to(rgba(0, 0, 0, 0.7))), url(../../img/adventure-bg.jpeg) center/cover no-repeat;
+  background: -o-linear-gradient(left, rgba(186, 133, 84, 0.7) 4%, rgba(0, 0, 0, 0.7) 100%), url(../../img/adventure-bg.jpeg) center/cover no-repeat;
+  background: linear-gradient(90deg, rgba(186, 133, 84, 0.7) 4%, rgba(0, 0, 0, 0.7) 100%), url(../../img/adventure-bg.jpeg) center/cover no-repeat;
   -webkit-clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%);
           clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%);
+}
+
+.section-tour {
+  padding: 8rem 0;
+}
+
+.section-feedback {
+  padding: 8rem 0;
+  position: relative;
+}
+
+.section-booking {
+  padding: 8rem 0;
+  background: -webkit-gradient(linear, left top, right top, color-stop(4%, #BA8554), to(#A14F03));
+  background: -o-linear-gradient(left, #BA8554 4%, #A14F03);
+  background: linear-gradient(90deg, #BA8554 4%, #A14F03);
 }

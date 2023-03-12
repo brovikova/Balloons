@@ -30,15 +30,18 @@ body
   font-size: $font-size-h2
   letter-spacing: 1rem
   font-weight: 900
-  background: linear-gradient(90deg, rgba($base-light-color, 0.7) 0%, rgba($base-dark-color, 0.7) 100%)
+  background: $font-gradient
   -webkit-background-clip: text
   color: transparent
   transition: all .4s
   backface-visibility: hidden
+  text-shadow: $text-shadow
   &:hover
     text-shadow: $text-shadow
     transform: scale(1.04)
-
+  &_white
+    color: $light-color
+    
 .title-third
   font-size: $font-size-h3
   line-height: 2.4rem
