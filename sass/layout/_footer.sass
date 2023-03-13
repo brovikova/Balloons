@@ -1,0 +1,28 @@
+.footer
+  padding: 8rem 0
+  background: #333333
+  text-align: center
+  &__logo
+    margin-bottom: 5rem
+    width: 12rem
+
+  &__list
+    list-style: none
+
+  &__item
+    display: inline-block
+    &:not(:last-child)
+        margin-right: 5rem
+
+  &__link
+    transition: all .2s
+    &:link, &:visited
+      @include style-link($light-color, transparent)
+      font-weight: 300
+      letter-spacing: .2rem
+      font-size: $font-size-paragraph
+      
+    &:hover, &:active
+      color: $base-light-color
+      text-shadow: $text-shadow
+      transform: scale(1.1)

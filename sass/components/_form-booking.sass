@@ -1,0 +1,83 @@
+.booking
+  padding: 5rem
+  background: linear-gradient(100deg, rgba(255, 255, 255, .9) 60%, transparent 60%), url(../../img/booking-bg.jpg) center / cover no-repeat
+  border-radius: .3rem
+  box-shadow: $box-shadow
+
+.booking__form
+  width: 55%
+  
+.form
+  padding-top: 10px
+  &__group:not(:last-child)
+    margin-bottom: 1.5rem
+
+  &__input
+    width: 60%
+    background: $light-color
+    padding: 1.8rem 0 1.8rem 2.2rem
+    border: none
+    border-radius: .3rem
+    border-bottom: .3rem solid transparent
+    font-size: $font-size-paragraph
+    letter-spacing: .2rem
+    color: $font-color
+    font-weight: 400
+    caret-color: $base-dark-color
+    &:focus
+      border-bottom: .3rem solid #66D763
+      box-shadow: $box-shadow
+      outline: none
+      color: $dark-color
+    &:focus:invalid
+      border-bottom: .3rem solid #D76363
+
+  &__label
+    display: block
+    padding-left: 1.5rem
+    font-size: $font-size-paragraph
+    letter-spacing: .2rem
+    color: $font-color
+    font-weight: 400
+    transition: all .2s
+  &__input:placeholder-shown + &__label
+    visibility: hidden
+    opacity: 0
+
+  &__group-radio
+    display: inline-block
+    letter-spacing: .2rem
+
+  &__input-radio
+    display: none
+
+  &__label-radio
+    cursor: pointer
+    position: relative
+
+  &__button-radio
+    width: 3rem
+    height: 3rem
+    border-radius: 50%
+    border: .4rem solid $base-light-color
+    display: inline-block
+    position: relative
+    top: .8rem
+    margin-right: 1rem
+    &::after
+      content: ""
+      display: inline-block
+      width: 1.5rem
+      height: 1.5rem
+      border-radius: 50%
+      background: $base-light-color
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      opacity: 0
+  &__input-radio:checked ~ &__label-radio &__button-radio::after
+    opacity: 1
+    
+ 
+

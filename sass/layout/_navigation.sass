@@ -1,0 +1,100 @@
+.navigation
+
+  &__toggle
+    display: none
+  &__button
+    display: inline-block
+    width: 7rem
+    height: 7rem
+    border-radius: 50%
+    background: $light-color
+    position: fixed
+    top: 5rem
+    right: 5rem
+    z-index: 200
+    text-align: center
+    cursor: pointer
+  &__background
+    width: 6rem
+    height: 6rem
+    border-radius: 50%
+    background: radial-gradient($base-light-color, $base-dark-color)
+    position: fixed
+    top: 5.5rem
+    right: 5.5rem
+    z-index: 100
+    transition: all .2s ease-in
+
+  &__nav
+    width: 0
+    height: 100vh
+    position: fixed
+    top: 0
+    right: 0
+    z-index: 150
+    opacity: 0
+    transition: all .2s ease-in
+  &__list
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    list-style: none
+  &__item
+    text-align: center
+    &:not(:last-child)
+      margin-bottom: 5rem
+  &__link 
+    &:link, &:visited
+      @include style-link($light-color, transparent)
+      font-size: 0rem
+      letter-spacing: .5rem
+      font-weight: 300
+      background: linear-gradient(120deg, transparent 50%, $light-color 50%)
+      background-size: 225%
+      padding: 1rem 2rem
+      transition: background-position .3s linear, color .3s linear, transform .2s linear, font-size .2s ease-in
+    &:hover, &:active
+      background-position: 100%
+      color: $base-light-color
+      transform: translateX(1rem)
+
+  &__toggle:checked ~ &__nav
+    width: 100%
+    opacity: 1
+  &__toggle:checked ~ &__nav > &__list > &__item > &__link
+    font-size: 4rem
+  &__toggle:checked ~ &__background
+    transform: scale(100)
+  
+  &__icon
+    position: relative
+    margin-top: 45%
+    &, &:before, &::after
+      display: inline-block
+      background: $dark-color
+      width: 30px
+      height: 2px
+      left: 0
+    &::before, &::after
+      content: ""
+      position: absolute
+
+    &::before
+      top: -10px
+    &::after
+      top: 10px
+  
+  &__button:hover &__icon::before
+    top: -12px
+  &__button:hover &__icon::after
+    top: 12px
+  &__toggle:checked + &__button &__icon
+    background: transparent
+  &__toggle:checked + &__button &__icon::before
+    transform: rotate(45deg)
+    top: 0
+  &__toggle:checked + &__button &__icon::after
+    transform: rotate(-45deg)
+    top: 0
+    
