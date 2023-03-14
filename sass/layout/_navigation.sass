@@ -44,6 +44,8 @@
     text-align: center
     &:not(:last-child)
       margin-bottom: 5rem
+      @include respond(tab-land)
+        margin-bottom: 4rem
   &__link 
     &:link, &:visited
       @include style-link($light-color, transparent)
@@ -64,31 +66,33 @@
     opacity: 1
   &__toggle:checked ~ &__nav > &__list > &__item > &__link
     font-size: 4rem
+    @include respond(tab-land)
+      font-size: 3rem
   &__toggle:checked ~ &__background
     transform: scale(100)
   
   &__icon
     position: relative
-    margin-top: 45%
+    margin-top: 48%
     &, &:before, &::after
       display: inline-block
       background: $dark-color
-      width: 30px
-      height: 2px
+      width: 3rem
+      height: .2rem
       left: 0
     &::before, &::after
       content: ""
       position: absolute
 
     &::before
-      top: -10px
+      top: -1rem
     &::after
-      top: 10px
+      top: 1rem
   
   &__button:hover &__icon::before
-    top: -12px
+    top: -1.2rem
   &__button:hover &__icon::after
-    top: 12px
+    top: 1.2rem
   &__toggle:checked + &__button &__icon
     background: transparent
   &__toggle:checked + &__button &__icon::before

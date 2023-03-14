@@ -2,15 +2,22 @@
   max-width: $grid-width
   margin: 0 auto
   @include clearfix
+  @include respond(tab-land)
+    max-width: $grid-width-tablet
   
 .col-1-of-2
   width: calc((100% - #{$gutter-horizontal}) / 2)
+    //@include respond(tab-land)
 
 .col-1-of-3
   width: calc((100% - #{$gutter-horizontal} * 2) / 3)
+  @include respond(tab-land)
+    width: calc((100% - #{$gutter-horizontal-tablet} * 2) / 3)
 
 .col-1-of-4
   width: calc((100% - #{$gutter-horizontal} * 3) / 4)
+  @include respond(tab-land)
+    width: calc((100% - #{$gutter-horizontal-tablet} * 3) / 4)
 
 .col-2-of-3
   width: calc(((100% - #{$gutter-horizontal} * 2) / 3) * 2 + #{$gutter-horizontal}) 
@@ -26,3 +33,7 @@
   &:not(:last-child)
     margin-right: $gutter-horizontal
     margin-bottom: $gutter-row-vertical
+  @include respond(tab-land)
+    &:not(:last-child)
+      margin-right: $gutter-horizontal-tablet
+     

@@ -13,10 +13,14 @@
       top: 8rem
       right: 0
       z-index: 1
+      @include respond(tab-land)
+        top: 6rem
     &_b3
       top: 14rem
       left: 4rem
       z-index: 2
+      @include respond(tab-land)
+        top: 11rem
     &:hover
       transform: scale(1.2)
       outline: 1rem solid $base-light-color

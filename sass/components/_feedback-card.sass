@@ -4,6 +4,8 @@
   box-shadow: $box-shadow
   padding: 6rem 10rem
   transform: skew(-25deg)
+  @include respond(tab-land)
+    padding: 4rem 9rem
   & > *
     transform: skew(25deg)
   &__image

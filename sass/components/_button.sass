@@ -10,6 +10,7 @@
     transition: all .3s
     position: relative
     border: none
+    text-align: right
   &:hover
     transform: translateY(-.4rem)
     box-shadow: $box-shadow
@@ -36,6 +37,9 @@
 
   &_card.btn
     padding: 1.5rem 2.5rem
+    @include respond(tab-land)
+      padding: 1.5rem 1.8rem
+      font-size: 1.8rem
 
   &_accent
     color: $light-color

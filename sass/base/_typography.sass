@@ -1,8 +1,10 @@
 body
   font-family: "Roboto", sans-serif
-  font-size: 1.6rem
+  font-size: $font-size-paragraph
   font-weight: 400
   color: $font-color
+  @include respond(tab-land)
+    font-size: $font-size-paragraph-tablet
 
 .title-first
   color: $light-color
@@ -15,6 +17,8 @@ body
     font-weight: 900
     margin-bottom: 1rem
     animation: leftToRight 2s ease-in .5s
+    @include respond(tab-land)
+      font-size: 4rem
   &__subtitle
     display: block
     text-transform: lowercase
@@ -24,6 +28,8 @@ body
     font-weight: 100
     animation: rightToLeft 2s ease-in .5s
     margin-bottom: 5rem
+    @include respond(tab-land)
+      font-size: 3.2rem
 
 .title-secondary
   text-transform: uppercase
@@ -36,6 +42,8 @@ body
   transition: all .4s
   backface-visibility: hidden
   text-shadow: $text-shadow
+  @include respond(tab-land)
+    font-size: $font-size-h2-tablet
   &:hover
     text-shadow: $text-shadow
     transform: scale(1.04)
@@ -48,9 +56,13 @@ body
   letter-spacing: .2rem
   font-weight: 700
   text-transform: uppercase
-
+  @include respond(tab-land)
+    font-size: $font-size-h3-tablet
 .paragraph
   font-size: $font-size-paragraph
   line-height: 140%
   letter-spacing: .2rem
   font-weight: 400
+  overflow-wrap: break-word
+  @include respond(tab-land)
+    font-size: $font-size-paragraph-tablet
