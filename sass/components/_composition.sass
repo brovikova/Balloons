@@ -6,6 +6,8 @@
     position: absolute
     transition: all .3s
     outline-offset: 1rem
+    @include respond(tab-port)
+      width: 65%
     &_b1
       top: 0
       left: 2rem
@@ -15,12 +17,17 @@
       z-index: 1
       @include respond(tab-land)
         top: 6rem
+      @include respond(tab-port)
+        top: 8rem
     &_b3
       top: 14rem
       left: 4rem
       z-index: 2
       @include respond(tab-land)
         top: 11rem
+      @include respond(tab-port)
+        top: 16rem
+        left: 9rem
     &:hover
       transform: scale(1.2)
       outline: 1rem solid $base-light-color

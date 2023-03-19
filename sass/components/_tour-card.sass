@@ -3,6 +3,8 @@
   height: 52rem
   -moz-perspective: 150rem
   perspective: 150rem
+  @include respond(tab-port)
+      height: 80rem
   &__side
     position: absolute
     top: 0
@@ -13,6 +15,8 @@
     backface-visibility: hidden
     border-radius: .3rem
     box-shadow: $box-shadow
+    @include respond(tab-port)
+      height: 80rem
     &_front
       background: $light-color
     &_back
@@ -32,6 +36,8 @@
     width: 100%
     background-blend-mode: hard-light
     clip-path: polygon(0% 0%, 100% 0%, 100% 100%, 0% 85%)
+    @include respond(tab-port)
+      height: 40rem
     &_1
       background: $base-light-color url(../../img/card-1.jpg) center / cover no-repeat
     &_2
@@ -45,6 +51,8 @@
     text-transform: uppercase
     color: $light-color
     position: relative
+    @include respond(tab-port)
+      font-size: 4rem
     span
       display: block
       width: fit-content
@@ -54,16 +62,23 @@
       &:nth-child(1)
         padding: 1rem 2rem .2rem
         top: -5rem
+        @include respond(tab-port)
+          top: -7rem
       &:nth-child(2)
         padding: .2rem 2rem 1rem
         top: -1rem
+        @include respond(tab-port)
+          top: -2rem
 
   &__description
     list-style: none
     font-weight: 700
     letter-spacing: .2rem
     color: $font-color
-    padding: 6rem 0
+    padding: 6rem 2rem
+    @include respond(tab-port)
+      font-size: 2.5rem
+      padding: 8rem 3rem
     li
       border-bottom: 1px solid $font-color
       width: fit-content
@@ -74,13 +89,20 @@
   &__text
     color: $light-color
     letter-spacing: .2rem
-    margin-bottom: 8rem
     &_caption
       text-transform: uppercase
       font-size: $font-size-paragraph
       font-weight: 300
+      margin-bottom: 8rem
+      @include respond(tab-port)
+        font-size: $font-size-paragraph-tablet-v
+        margin-bottom: 12rem
     &_price
       font-size: 6rem
       font-weight: 400
+      margin-bottom: 8rem
+      @include respond(tab-port)
+        font-size: 12rem
+        margin-bottom: 26rem
         
         

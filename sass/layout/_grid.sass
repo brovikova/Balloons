@@ -4,7 +4,8 @@
   @include clearfix
   @include respond(tab-land)
     max-width: $grid-width-tablet
-  
+  @include respond(tab-port)
+    max-width: $grid-width-tablet-v
 .col-1-of-2
   width: calc((100% - #{$gutter-horizontal}) / 2)
     //@include respond(tab-land)
@@ -36,4 +37,13 @@
   @include respond(tab-land)
     &:not(:last-child)
       margin-right: $gutter-horizontal-tablet
+  @include respond(tab-port)
+    width: 100%
+    
+    &:not(:last-child)
+      margin-right: 0
+      margin-bottom: $gutter-row-vertical-tablet-v
+    &:last-child
+      margin-bottom: $gutter-row-vertical-tablet-v
+      //margin-bottom: $gutter-row-vertical-v
      

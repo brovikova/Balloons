@@ -11,6 +11,9 @@
     position: relative
     border: none
     text-align: right
+    @include respond(tab-port)
+      padding: 2rem 5rem
+      font-size: 2.5rem
   &:hover
     transform: translateY(-.4rem)
     box-shadow: $box-shadow
@@ -40,6 +43,9 @@
     @include respond(tab-land)
       padding: 1.5rem 1.8rem
       font-size: 1.8rem
+    @include respond(tab-port)
+      padding: 2rem 5rem
+      font-size: 2.5rem
 
   &_accent
     color: $light-color

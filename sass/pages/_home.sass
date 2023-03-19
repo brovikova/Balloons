@@ -1,10 +1,16 @@
 .section-about
   padding: 8rem 0 0
+  position: relative
+  @include respond(tab-port)
+    padding-bottom: 43rem
 
 .section-adventure
   padding: 19rem 0 11rem
   background: $bg-gradient, url(../../img/adventure-bg.jpeg) center/cover no-repeat
   clip-path: polygon(0% 0%, 100% 15%, 100% 100%, 0% 85%)
+  @include respond(tab-port)
+    clip-path: polygon(0% 0%, 100% 10%, 100% 100%, 0% 90%)
+    padding: 30rem 0 25rem
 
 .section-tour
   padding: 8rem 0

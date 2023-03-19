@@ -4,13 +4,15 @@
 .block-center
   margin: 0 auto
 
-.margin-bottom-10px
+.margin-bottom-sm
   margin-bottom: 1rem
+  @include respond(tab-port)
+    margin-bottom: 2rem
 
-.margin-bottom-30px
+.margin-bottom-md
   margin-bottom: 3rem
 
-.margin-bottom-80px
+.margin-bottom-lg
   margin-bottom: 8rem
   
 .margin-left-20px

@@ -3,9 +3,12 @@
   background: linear-gradient(100deg, rgba(255, 255, 255, .9) 60%, transparent 60%), url(../../img/booking-bg.jpg) center / cover no-repeat
   border-radius: .3rem
   box-shadow: $box-shadow
-
+  @include respond(tab-port)
+    background: linear-gradient(100deg, rgba(255, 255, 255, .9) 100%, transparent 100%), url(../../img/booking-bg.jpg) center / cover no-repeat
 .booking__form
   width: 63%
+  @include respond(tab-port)
+    width: 100%
   
 .form
   padding-top: 10px
@@ -26,6 +29,9 @@
     caret-color: $base-dark-color
     @include respond(tab-land)
       font-size: $font-size-paragraph-tablet
+    @include respond(tab-port)
+      font-size: $font-size-paragraph-tablet-v
+      box-shadow: $box-shadow
     &:focus
       border-bottom: .3rem solid #66D763
       box-shadow: $box-shadow
